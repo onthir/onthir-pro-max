@@ -19,6 +19,26 @@
   },
   "posts": [
     {
+      "id": "post-5",
+      "timeAgo": "2h",
+      "visibility": "Public",
+      "body": "A short philosophical piece I've been sitting with: 'The Art of Starting Over.'\n\nIt's close to something I keep coming back to — that being authentic matters more than achieving. Most of what we call starting over is really just permission to be honest about what we want next.\n\nWatch below.",
+      "media": { "kind": "video", "provider": "youtube", "id": "Z8QMSneCHGM", "title": "The Art of Starting Over" },
+      "likes": 178,
+      "comments": 34,
+      "reposts": 12
+    },
+    {
+      "id": "post-4",
+      "timeAgo": "5h",
+      "visibility": "Public",
+      "body": "Built this as a satire and ended up with a real app.\n\nA polished, gamified wellness-app experience — daily check-ins, streaks, 'progress' charts — pointed at the most chaotic possible use case. The satire is the framing; the app is genuinely functional underneath.\n\nWalkthrough below.",
+      "media": { "kind": "video", "provider": "youtube", "id": "zN9HVF7_iHw", "title": "Substance tracker — walkthrough" },
+      "likes": 89,
+      "comments": 17,
+      "reposts": 5
+    },
+    {
       "id": "post-3",
       "timeAgo": "2d",
       "visibility": "Public",
@@ -67,6 +87,43 @@
       { "icon": "💼", "label": "Open to full-stack roles", "subtitle": "Remote or Durham, NC · .NET / Angular / Cloud" }
     ]
   },
+  "people": [
+    {
+      "name": "voems_vp",
+      "subtitle": "Video Poems · Instagram",
+      "url": "https://www.instagram.com/voems_vp/",
+      "initial": "V",
+      "avatar": "/voems.jpg"
+    },
+    {
+      "name": "@onthir",
+      "subtitle": "Personal · Instagram",
+      "url": "https://www.instagram.com/onthir/",
+      "initial": "O",
+      "avatar": "/onthir.jpg"
+    },
+    {
+      "name": "Onthir",
+      "subtitle": "YouTube channel · @Onthir",
+      "url": "https://www.youtube.com/@Onthir",
+      "initial": "▶",
+      "avatar": "/onthir.jpg"
+    },
+    {
+      "name": "OnthirBE",
+      "subtitle": "YouTube channel · @OnthirBE",
+      "url": "https://www.youtube.com/@OnthirBE",
+      "initial": "B",
+      "avatar": "/onthirbe.jpg"
+    },
+    {
+      "name": "spurgeondrive",
+      "subtitle": "YouTube channel · @spurgeondrive5452",
+      "url": "https://www.youtube.com/@spurgeondrive5452",
+      "initial": "S",
+      "avatar": "/spurgeon_drive.jpg"
+    }
+  ],
   "experience": [
     {
       "role": "Software Engineer",

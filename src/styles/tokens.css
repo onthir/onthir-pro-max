@@ -4,15 +4,15 @@
   --bg: #f4f2ee;
   --surface: #ffffff;
   --surface-hover: #f3f2ef;
-  --surface-alt: #edf3f8;
+  --surface-alt: #f8ecec;
   --divider: #e9e5df;
   --border: #d9d6d0;
 
-  /* Brand */
-  --brand: #0a66c2;
-  --brand-hover: #004182;
-  --brand-pressed: #09223b;
-  --brand-tint: #e7f3ff;
+  /* Brand — crimson red, HSL mirror of LinkedIn blue (#0a66c2 → hue 210°→355°) */
+  --brand: #c20a1f;
+  --brand-hover: #82001b;
+  --brand-pressed: #3b0509;
+  --brand-tint: #ffe7eb;
 
   /* Text on white */
   --text: rgba(0, 0, 0, 0.9);

@@ -11,7 +11,10 @@
       "Bash(ls \"C:/Users/Onthir/AppData/Local/Temp/claude/\" 2>&1 | head -20; echo \"---\"; find \"C:/Users/Onthir/AppData/Local/Temp/\" -maxdepth 3 -name \"*.jpg\" -o -name \"*.png\" 2>/dev/null | head -20; echo \"---\"; ls \"x:/2026/Coding/Onthir/public/\" 2>/dev/null)",
       "Read(//c/Users/Onthir/AppData/Local/Temp/claude/**)",
       "Read(//c/Users/Onthir/AppData/Local/Temp/**)",
-      "Bash(curl -s http://localhost:4321/)"
+      "Bash(curl -s http://localhost:4321/)",
+      "Bash(curl -s http://localhost:4321/video)",
+      "Bash(python -c \"import sys,re; s=sys.stdin.read\\(\\); m=re.search\\(r'<p class=\\\\\"lead\\\\\"[^>]*>\\(.*?\\)</p>', s, re.DOTALL\\); print\\(repr\\(m.group\\(1\\)\\) if m else 'no match'\\)\")",
+      "Bash(curl -s http://localhost:4321/profile)"
     ]
   }
 }

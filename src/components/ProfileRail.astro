@@ -1,68 +1,38 @@
 ---
-import Icon from './Icon.astro';
+import Avatar from './Avatar.astro';
+import { content } from '../lib/content.ts';
+import { isExternal } from '../lib/url.ts';
+
+const { people } = content;
 ---
 <aside class="rail">
-  <section class="card promo">
-    <header class="promo-head">
-      <span class="promo-logo" aria-hidden="true"><Icon name="onthir" size={20} /></span>
-      <span class="tiny muted">Ad · ⋯</span>
-    </header>
-    <div class="promo-body">
-      <p class="promo-title">You might be interested in this</p>
-      <div class="promo-art" aria-hidden="true"></div>
-      <p class="promo-cta">A space for slow tools and considered things.</p>
-    </div>
-    <a href="#" class="btn btn-secondary promo-btn">Learn more</a>
-  </section>
-
   <section class="card people">
     <h3>People you may know</h3>
     <p class="tiny muted">From your industry</p>
     <ul class="people-list">
-      <li>
-        <span class="banner" aria-hidden="true"></span>
-        <span class="avi" aria-hidden="true">A</span>
-        <p class="pname">A. Maeve</p>
-        <p class="tiny">Filmmaker · Reykjavík</p>
-        <button class="btn btn-secondary small">+ Connect</button>
-      </li>
-      <li>
-        <span class="banner" aria-hidden="true"></span>
-        <span class="avi" aria-hidden="true">M</span>
-        <p class="pname">M. Reid</p>
-        <p class="tiny">Engineer · Lisbon</p>
-        <button class="btn btn-secondary small">+ Connect</button>
-      </li>
+      {people.map((p) => (
+        <li>
+          <span class="banner" aria-hidden="true"></span>
+          <span class="avi-wrap">
+            <Avatar initial={p.initial} src={p.avatar} alt={p.name} size={56} ring />
+          </span>
+          <p class="pname">{p.name}</p>
+          <p class="tiny">{p.subtitle}</p>
+          <a
+            class="btn btn-secondary small"
+            href={p.url}
+            target={isExternal(p.url) ? '_blank' : undefined}
+            rel={isExternal(p.url) ? 'noopener noreferrer' : undefined}
+          >+ Follow</a>
+        </li>
+      ))}
     </ul>
-    <a class="show-all" href="#">Show all →</a>
+    <a class="show-all" href="/video">Show all →</a>
   </section>
 </aside>
 
 <style>
   .rail { display: flex; flex-direction: column; gap: 8px; }
-
-  .promo { padding: 12px 16px 16px; text-align: center; }
-  .promo-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 8px;
-  }
-  .promo-logo {
-    display: inline-flex;
-  }
-  .promo-title { margin: 0 0 8px; font-size: 14px; color: var(--text); }
-  .promo-art {
-    aspect-ratio: 1;
-    background:
-      radial-gradient(60% 60% at 30% 30%, #b08c54, transparent 70%),
-      radial-gradient(80% 80% at 80% 80%, #0a66c2, #09223b);
-    border-radius: 50%;
-    margin: 8px auto;
-    width: 80%;
-  }
-  .promo-cta { margin: 8px 0 12px; font-size: 14px; color: var(--text); font-weight: 600; }
-  .promo-btn { width: 100%; }
 
   .people { padding: 12px 0 4px; }
   .people h3 { margin: 0 16px; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
@@ -73,6 +43,7 @@ import Icon from './Icon.astro';
     padding: 0 16px 16px;
     border-bottom: 1px solid var(--divider);
     margin-bottom: 8px;
+    text-align: center;
   }
   .people-list li:last-child { border-bottom: none; margin-bottom: 0; }
   .banner {
@@ -81,17 +52,10 @@ import Icon from './Icon.astro';
     margin: 0 -16px 0;
     background:
       radial-gradient(60% 80% at 30% 30%, rgba(176,140,84,0.4), transparent 60%),
-      linear-gradient(135deg, #0a66c2, #09223b);
+      linear-gradient(135deg, #c20a1f, #3b0509);
   }
-  .avi {
-    display: inline-flex;
-    width: 56px; height: 56px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #1a1a1a, #3a3a3a);
-    color: #fff;
-    align-items: center; justify-content: center;
-    font-weight: 600;
-    border: 3px solid var(--surface);
+  .avi-wrap {
+    display: inline-block;
     margin-top: -28px;
   }
   .pname { margin: 8px 0 0; font-size: 14px; font-weight: 600; color: var(--text); }

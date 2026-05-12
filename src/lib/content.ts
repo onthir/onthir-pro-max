@@ -27,7 +27,8 @@ export type Post = {
   media:
     | null
     | { kind: 'image'; ratio: string; label: string }
-    | { kind: 'article'; title: string; domain: string; subtitle: string };
+    | { kind: 'article'; title: string; domain: string; subtitle: string }
+    | { kind: 'video'; provider: 'youtube'; id: string; title: string };
   likes: number;
   comments: number;
   reposts: number;
@@ -63,11 +64,20 @@ export type Education = {
 
 export type Skill = { name: string; endorsements: number };
 
+export type Person = {
+  name: string;
+  subtitle: string;
+  url: string;
+  initial: string;
+  avatar: string;
+};
+
 export const content = data as {
   profile: Profile;
   posts: Post[];
   links: { title: string; subtitle: string; items: LinkItem[] };
   today: { title: string; items: { icon: string; label: string; subtitle: string }[] };
+  people: Person[];
   experience: Experience[];
   projects: Project[];
   education: Education[];
