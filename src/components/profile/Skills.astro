@@ -1,0 +1,37 @@
+---
+import Section from './Section.astro';
+import { content } from '../../lib/content.ts';
+const { skills } = content;
+---
+<Section title="Skills" id="skills">
+  <ul class="skill-list">
+    {skills.map((s, i) => (
+      <li class={`skill ${i < skills.length - 1 ? 'has-divider' : ''}`}>
+        <h3 class="name">{s.name}</h3>
+        <p class="endorse tiny">
+          <span class="dot" aria-hidden="true"></span>
+          Endorsed by {s.endorsements} {s.endorsements === 1 ? 'person' : 'people'}
+        </p>
+      </li>
+    ))}
+  </ul>
+</Section>
+
+<style>
+  .skill-list { display: flex; flex-direction: column; }
+  .skill { padding: 4px 0 12px; }
+  .skill.has-divider { border-bottom: 1px solid var(--divider); margin-bottom: 12px; }
+  .name { margin: 0; font-size: 16px; font-weight: 600; color: var(--text); }
+  .endorse {
+    margin: 4px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--text-2);
+    display: inline-block;
+  }
+</style>

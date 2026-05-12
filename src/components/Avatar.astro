@@ -1,0 +1,70 @@
+---
+type Props = {
+  initial?: string;
+  src?: string;
+  alt?: string;
+  size?: number;
+  ring?: boolean;
+  class?: string;
+};
+const {
+  initial = 'B',
+  src = '',
+  alt = '',
+  size = 48,
+  ring = false,
+  class: cls = '',
+} = Astro.props;
+
+const dim = `width:${size}px;height:${size}px;`;
+const fontSize = `font-size:${Math.round(size * 0.42)}px;`;
+---
+<span
+  class={`avatar ${ring ? 'has-ring' : ''} ${cls}`}
+  style={dim + fontSize}
+  role={alt ? 'img' : undefined}
+  aria-label={alt || undefined}
+  aria-hidden={!alt ? 'true' : undefined}
+>
+  <span class="initial">{initial}</span>
+  {src && (
+    <img
+      src={src}
+      alt=""
+      loading="lazy"
+      decoding="async"
+      onerror="this.style.display='none'"
+    />
+  )}
+</span>
+
+<style>
+  .avatar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a1a1a, #3a3a3a 60%, #5a5a5a);
+    color: #fff;
+    font-weight: 600;
+    flex-shrink: 0;
+    user-select: none;
+    overflow: hidden;
+  }
+  .initial {
+    position: relative;
+    z-index: 0;
+  }
+  .avatar img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .has-ring {
+    box-shadow: 0 0 0 4px var(--surface);
+  }
+</style>

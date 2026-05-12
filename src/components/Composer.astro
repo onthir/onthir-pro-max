@@ -1,0 +1,68 @@
+---
+import Avatar from './Avatar.astro';
+import Icon from './Icon.astro';
+import { content } from '../lib/content.ts';
+const { profile } = content;
+---
+<section class="composer card" aria-label="Start a post">
+  <div class="row">
+    <Avatar initial={profile.name[0]} src={profile.avatar} alt={profile.name} size={48} />
+    <button type="button" class="start-input">Start a post</button>
+  </div>
+  <div class="actions">
+    <button type="button" class="action">
+      <Icon name="photo" size={20} /> <span>Media</span>
+    </button>
+    <button type="button" class="action">
+      <Icon name="video-post" size={20} /> <span>Video</span>
+    </button>
+    <button type="button" class="action">
+      <Icon name="event" size={20} /> <span>Event</span>
+    </button>
+    <button type="button" class="action">
+      <Icon name="article" size={20} /> <span>Write article</span>
+    </button>
+  </div>
+</section>
+
+<style>
+  .composer { padding: 12px 16px 4px; }
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .start-input {
+    flex: 1;
+    text-align: left;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    color: var(--text-2);
+    font-weight: 600;
+    background: transparent;
+  }
+  .start-input:hover { background: var(--surface-hover); }
+
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 4px 0 8px;
+    margin-top: 4px;
+  }
+  .action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    color: var(--text-2);
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .action:hover { background: var(--surface-hover); }
+  @media (max-width: 720px) {
+    .action span { display: none; }
+  }
+</style>

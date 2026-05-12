@@ -1,0 +1,39 @@
+---
+import Icon from './Icon.astro';
+---
+<div class="feed-sort">
+  <span class="line" aria-hidden="true"></span>
+  <button type="button" class="sort">
+    <span class="muted">Sort by:</span>
+    <span class="value">Top <Icon name="caret" size={12} /></span>
+  </button>
+</div>
+
+<style>
+  .feed-sort {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    margin: 4px 0;
+  }
+  .line {
+    flex: 1;
+    height: 1px;
+    background: var(--divider);
+  }
+  .sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-2);
+    font-size: 12px;
+  }
+  .value {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    color: var(--text);
+    font-weight: 600;
+  }
+</style>

@@ -1,0 +1,63 @@
+---
+import Section from './Section.astro';
+import Icon from '../Icon.astro';
+import { content } from '../../lib/content.ts';
+import { isExternal } from '../../lib/url.ts';
+const { projects } = content;
+---
+<Section title="Projects" id="projects">
+  <ul class="proj-list">
+    {projects.map((p, i) => (
+      <li class={`proj ${i < projects.length - 1 ? 'has-divider' : ''}`}>
+        <div class="body">
+          <h3 class="name">{p.name}</h3>
+          <p class="dates tiny">{p.dates}</p>
+          <p class="summary">{p.summary}</p>
+          <a
+            class="link"
+            href={p.link}
+            target={isExternal(p.link) ? '_blank' : undefined}
+            rel={isExternal(p.link) ? 'noopener noreferrer' : undefined}
+          >
+            <Icon name="arrow" size={12} /> Show project
+          </a>
+          {p.skills.length > 0 && (
+            <p class="skills">
+              <span class="skills-icon" aria-hidden="true">▦</span>
+              <strong>Skills:</strong> {p.skills.join(' · ')}
+            </p>
+          )}
+        </div>
+      </li>
+    ))}
+  </ul>
+</Section>
+
+<style>
+  .proj-list { display: flex; flex-direction: column; }
+  .proj { padding: 4px 0 16px; }
+  .proj.has-divider { border-bottom: 1px solid var(--divider); margin-bottom: 12px; }
+  .name { margin: 0; font-size: 16px; font-weight: 600; color: var(--text); }
+  .dates { margin: 2px 0 0; }
+  .summary {
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text);
+  }
+  .link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .link:hover { color: var(--brand); }
+  .skills {
+    margin: 12px 0 0;
+    font-size: 14px;
+  }
+  .skills-icon { color: var(--text-2); margin-right: 4px; }
+</style>

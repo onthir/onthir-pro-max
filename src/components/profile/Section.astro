@@ -1,0 +1,48 @@
+---
+import Icon from '../Icon.astro';
+type Props = { title: string; id?: string };
+const { title, id } = Astro.props;
+---
+<section class="psection card" id={id}>
+  <header class="psection-head">
+    <h2>{title}</h2>
+    <div class="psection-actions">
+      <button type="button" class="iconbtn" aria-label="Add">
+        <Icon name="plus" size={20} />
+      </button>
+      <button type="button" class="iconbtn" aria-label="Edit">
+        <Icon name="pencil" size={16} />
+      </button>
+    </div>
+  </header>
+  <div class="psection-body">
+    <slot />
+  </div>
+  <slot name="footer" />
+</section>
+
+<style>
+  .psection { padding: 24px; margin-top: 8px; }
+  .psection-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .psection-head h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .psection-actions { display: flex; gap: 4px; }
+  .iconbtn {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    color: var(--text-2);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .iconbtn:hover { background: var(--surface-hover); color: var(--text); }
+  .psection-body { color: var(--text); }
+</style>

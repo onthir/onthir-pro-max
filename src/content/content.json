@@ -1,0 +1,151 @@
+{
+  "profile": {
+    "name": "Bibek Bhandari",
+    "headline": "Full-Stack Software Engineer · .NET Core · Angular · SQL Server · React · Python · 4+ yrs production experience",
+    "location": "Durham, North Carolina, United States",
+    "pronouns": "",
+    "currentRole": "M.S. Data Science · University of the Cumberlands",
+    "education": "University of the Cumberlands",
+    "connections": 500,
+    "followers": 712,
+    "avatar": "/avatar.jpg",
+    "banner": "",
+    "email": "bibekpro13@gmail.com",
+    "phone": "318-789-4132",
+    "linkedin": "https://linkedin.com/in/bhandarib",
+    "github": "https://github.com/",
+    "about": "Full-Stack Software Engineer with 4+ years of production experience designing and delivering end-to-end web applications across enterprise and startup environments. Deep hands-on expertise in .NET Core, Angular, and SQL Server, with strong additional experience in React, Python, and Node.js.\n\nProven track record of owning entire application lifecycles — from architecture and database design through ETL pipeline implementation, CI/CD deployment, and live production support. Comfortable working across the stack, collaborating closely with product and non-technical stakeholders, and shipping reliable systems that real users depend on every day.",
+    "openTo": ["Full-Stack Engineer", "Backend Engineer", ".NET Core / Angular roles"]
+  },
+  "posts": [
+    {
+      "id": "post-3",
+      "timeAgo": "2d",
+      "visibility": "Public",
+      "body": "A small win from my last role I keep coming back to: we took a key Primewell Marketing Portal workflow from ~15 second response times down to under 2 seconds — about a 10× improvement.\n\nNo service rewrite, no caching layer added. Just a careful pass through the SQL Server execution plans, three new indexes on the right columns, and one query rewrite to remove a hidden N+1.\n\nLesson I'd share: before reaching for the bigger hammer, read the plan. The bottleneck is almost never where you think it is.",
+      "media": null,
+      "likes": 142,
+      "comments": 23,
+      "reposts": 8
+    },
+    {
+      "id": "post-2",
+      "timeAgo": "5d",
+      "visibility": "Public",
+      "body": "Shipped my new portfolio site this weekend after putting it off for far too long.\n\nStack: Astro + a single content.json file. No CMS, no database, no backend. Deploys to Vercel in seconds, edits at 11pm in a text editor.\n\nSometimes the simplest stack really is the right one. Open to feedback — link in the first comment.",
+      "media": null,
+      "likes": 67,
+      "comments": 11,
+      "reposts": 2
+    },
+    {
+      "id": "post-1",
+      "timeAgo": "1w",
+      "visibility": "Public",
+      "body": "One of the most underrated things you can do as an engineer is document the systems no one else wants to touch.\n\nDuring an org restructuring at BCBS I spent a few weeks reverse-engineering and writing up three enterprise portals — Member, Broker, Provider — across frontend, backend, databases, deployments, logging, and external integrations. Nobody asked. It made onboarding faster, debugging cheaper, and ownership clearer for the whole team.\n\nWriting it up here.",
+      "media": { "kind": "article", "title": "Why I document systems no one asked me to", "domain": "onthir.com", "subtitle": "Notes from reverse-engineering three enterprise portals during an org restructuring." },
+      "likes": 234,
+      "comments": 41,
+      "reposts": 19
+    }
+  ],
+  "links": {
+    "title": "Around the web",
+    "subtitle": "Find me here",
+    "items": [
+      { "label": "GitHub · github.com/bhandarib", "subtitle": "Open-source code & projects", "url": "https://github.com/" },
+      { "label": "LinkedIn · /in/bhandarib", "subtitle": "Professional profile", "url": "https://linkedin.com/in/bhandarib" },
+      { "label": "Email · bibekpro13@gmail.com", "subtitle": "Best way to reach me", "url": "mailto:bibekpro13@gmail.com" },
+      { "label": "Resume (PDF)", "subtitle": "Latest version · May 2026", "url": "/Bibek-Bhandari-Resume.pdf" },
+      { "label": "Phone · 318-789-4132", "subtitle": "Calls & texts", "url": "tel:+13187894132" }
+    ]
+  },
+  "today": {
+    "title": "Currently",
+    "items": [
+      { "icon": "🎓", "label": "Just completed M.S. Data Science", "subtitle": "University of the Cumberlands · May 2026" },
+      { "icon": "💼", "label": "Open to full-stack roles", "subtitle": "Remote or Durham, NC · .NET / Angular / Cloud" }
+    ]
+  },
+  "experience": [
+    {
+      "role": "Software Engineer",
+      "company": "Blue Cross Blue Shield of Louisiana",
+      "logo": "B",
+      "type": "Full-time",
+      "dates": "Jan 2023 — Sep 2025 · 2 yrs 9 mos",
+      "location": "Monroe, LA",
+      "summary": "Owned the full lifecycle of the Primewell Marketing Portal — an external-facing .NET Core / Angular / SQL Server application — from initial architecture and data schema design through deployment, monitoring, and production support.\n\n• Designed and implemented backend REST APIs, responsive Angular frontend workflows, and automated Azure DevOps CI/CD pipelines, with Application Insights for observability and alerting.\n• Drove a 10× improvement in critical feature response times (from ~15 seconds to under 2 seconds) through SQL query optimisation, strategic indexing, and caching, significantly improving user experience and self-service adoption.\n• Enabled increased customer self-service and reduced support load by delivering intuitive workflows and AI-assisted features that minimised errors during plan selection and member registration.\n• Collaborated directly with product, marketing, and business stakeholders to translate loosely defined requirements into implementable features, helping the team transition toward a structured Agile workflow.\n• Supported the application across live production environments including on-call rotations, weekend releases, incident triage, and hotfixes, resolving deployment failures, API issues, data inconsistencies, and user-reported defects.\n\nSystems Documentation & Platform Analysis Initiative\n• Proactively led a self-initiated documentation effort during organisational restructuring — reverse-engineering and fully documenting three critical enterprise portals (Member, Broker, and Provider) across frontend, backend, databases, deployments, logging, and external integrations.\n• Produced structured, cross-functional documentation that accelerated onboarding, improved debugging efficiency, and clarified system ownership across engineering and leadership teams.\n• Designed and implemented a data mapping pipeline for the Vantage → Blue systems migration, transforming and reconciling provider claims data from a legacy database schema to a restructured target schema — ensuring data integrity, field-level accuracy, and continuity of claims processing across platforms.",
+      "skills": [".NET Core", "Angular", "SQL Server", "Azure DevOps", "Application Insights", "REST APIs", "ETL"]
+    },
+    {
+      "role": "Web Developer II",
+      "company": "Vantage Health Plan Inc.",
+      "logo": "V",
+      "type": "Full-time",
+      "dates": "Jul 2022 — Jan 2023 · 7 mos",
+      "location": "Monroe, LA",
+      "summary": "• Developed and maintained full-stack .NET Core / Angular web applications serving 1,000+ customers, integrating responsive front ends with ASP.NET Core back-ends and SQL Server databases.\n• Built and automated CI/CD pipelines using Azure DevOps, Docker, and Kubernetes for consistent, reliable cloud deployments across environments.\n• Supported the full SDLC from requirements analysis through production deployment under Agile and waterfall methodologies, collaborating with cross-functional teams on maintainable multi-layered architectures.",
+      "skills": [".NET Core", "Angular", "ASP.NET Core", "SQL Server", "Docker", "Kubernetes", "Azure DevOps"]
+    },
+    {
+      "role": "IT Helpdesk Technician",
+      "company": "University of Louisiana Monroe",
+      "logo": "U",
+      "type": "Part-time",
+      "dates": "Apr 2019 — Dec 2020 · 1 yr 9 mos",
+      "location": "Monroe, LA",
+      "summary": "• Resolved 100+ monthly technical support requests across hardware, software, and network issues in a university-wide domain environment.\n• Built and deployed a Python-based automated ticket alert system that reduced missed support requests to near zero, improving team responsiveness to incoming incidents.\n• Configured and hardened workstations end-to-end including system setup, security remediation, and malware removal, strengthening overall IT security posture.",
+      "skills": ["Python", "IT Support", "Windows Domain", "Security Hardening"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "CodeRaid — Alumni Management Platform",
+      "dates": "Best Capstone Award · University of Louisiana Monroe",
+      "summary": "Led a team of 5 engineers to design and deliver a full-stack alumni management web application using Django, React, and PostgreSQL — coordinating task breakdowns, timelines, and feature ownership across the team.\n\nIntegrated Stripe for payment processing and Twilio for automated communication workflows, enabling donations, event payments, and alumni outreach at scale.",
+      "link": "https://github.com/",
+      "skills": ["Django", "React", "PostgreSQL", "Stripe", "Twilio", "Team Leadership"]
+    },
+    {
+      "name": "Store-Website — Point of Sale System",
+      "dates": "Personal Project · Kathmandu, Nepal",
+      "summary": "Designed and built a full-stack store management and POS application using Django, React, and PostgreSQL, supporting live daily retail operations for a real business.\n\nDelivered a transaction processing system handling ~500 point-of-sale transactions per day with zero downtime, with core features including inventory tracking, sales recording, and role-based user workflows. Built with non-technical users in mind — intuitive UX, data integrity safeguards, and performance-optimised queries for fast checkout under load.",
+      "link": "https://github.com/",
+      "skills": ["Django", "React", "PostgreSQL", "POS Systems", "UX for non-technical users"]
+    },
+    {
+      "name": "onthir.com",
+      "dates": "May 2026 — Present",
+      "summary": "This site. Astro + a single content.json file as the source of truth, deployed to Vercel. Designed to be edited in a text editor at 11pm.",
+      "link": "https://onthir.com",
+      "skills": ["Astro", "TypeScript", "CSS", "Static-site design"]
+    }
+  ],
+  "education": [
+    {
+      "school": "University of the Cumberlands",
+      "degree": "M.S., Data Science",
+      "dates": "May 2026 · Williamsburg, KY",
+      "summary": ""
+    },
+    {
+      "school": "University of Louisiana Monroe",
+      "degree": "B.S., Computer Science",
+      "dates": "May 2022 · Monroe, LA",
+      "summary": ""
+    }
+  ],
+  "skills": [
+    { "name": "C# / .NET Core", "endorsements": 28 },
+    { "name": "Angular", "endorsements": 24 },
+    { "name": "SQL Server", "endorsements": 22 },
+    { "name": "TypeScript / JavaScript", "endorsements": 19 },
+    { "name": "Python", "endorsements": 16 },
+    { "name": "Azure DevOps & CI/CD", "endorsements": 14 },
+    { "name": "React", "endorsements": 13 },
+    { "name": "PostgreSQL", "endorsements": 11 },
+    { "name": "Docker & Kubernetes", "endorsements": 9 },
+    { "name": "ETL & Data Migration", "endorsements": 8 }
+  ]
+}

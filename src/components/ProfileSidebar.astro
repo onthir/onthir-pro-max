@@ -1,0 +1,177 @@
+---
+import { content } from '../lib/content.ts';
+import Avatar from './Avatar.astro';
+import Icon from './Icon.astro';
+
+const { profile } = content;
+---
+<aside class="profile-card card">
+  <a href="/profile" class="banner" aria-label="View profile">
+    <span class="banner-art" aria-hidden="true"></span>
+  </a>
+  <a href="/profile" class="identity">
+    <Avatar initial={profile.name[0]} src={profile.avatar} alt={profile.name} size={72} ring />
+    <h2 class="name">{profile.name}</h2>
+    <p class="headline">{profile.headline}</p>
+    <p class="location tiny">{profile.location}</p>
+  </a>
+
+  <div class="stats">
+    <a class="stat-row" href="/profile">
+      <span class="stat-label muted">Profile viewers</span>
+      <span class="stat-value">{Math.round(profile.followers / 12)}</span>
+    </a>
+    <a class="stat-row" href="/profile">
+      <span class="stat-label muted">Post impressions</span>
+      <span class="stat-value">{profile.followers.toLocaleString()}</span>
+    </a>
+  </div>
+
+  <a class="premium" href="/profile">
+    <span class="premium-icon" aria-hidden="true">★</span>
+    <span>
+      <span class="premium-line muted">Strengthen your profile</span>
+      <span class="premium-cta">Try Premium for free</span>
+    </span>
+  </a>
+
+  <a class="footer-link" href="/profile">
+    <span class="bookmark" aria-hidden="true">▤</span>
+    <span class="footer-label">My items</span>
+  </a>
+</aside>
+
+<nav class="quick-card card" aria-label="Quick links">
+  <ul>
+    <li><a href="/profile"><Icon name="about" size={16} /> About me</a></li>
+    <li><a href="/projects"><Icon name="projects" size={16} /> Projects</a></li>
+    <li><a href="/writing"><Icon name="writing" size={16} /> Writing</a></li>
+    <li><a href="/video"><Icon name="video" size={16} /> Video</a></li>
+  </ul>
+  <a class="discover" href="/about">
+    <Icon name="plus" size={16} /> <span>Get in touch</span>
+  </a>
+</nav>
+
+<style>
+  .profile-card { padding: 0 0 8px 0; text-align: center; }
+
+  .banner {
+    display: block;
+    height: 56px;
+    overflow: hidden;
+    position: relative;
+  }
+  .banner-art {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(120% 100% at 0% 0%, #b08c54 0%, transparent 60%),
+      radial-gradient(120% 120% at 100% 100%, #0a66c2 0%, #09223b 70%);
+  }
+
+  .identity {
+    display: block;
+    margin-top: -36px;
+    padding: 0 16px 12px;
+    color: var(--text);
+  }
+  .identity:hover { text-decoration: none; }
+  .identity .avatar { margin: 0 auto; }
+
+  .name {
+    margin: 12px 0 2px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .identity:hover .name { color: var(--brand); text-decoration: underline; }
+  .headline {
+    margin: 0 0 4px;
+    font-size: 12px;
+    color: var(--text-2);
+    line-height: 1.33;
+  }
+  .location { margin: 0; }
+
+  .stats {
+    border-top: 1px solid var(--divider);
+    padding: 12px 0 4px;
+    margin: 0 12px;
+  }
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 4px;
+    border-radius: 4px;
+    color: var(--text);
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .stat-row:hover { background: var(--surface-hover); text-decoration: none; }
+  .stat-label { font-weight: 400; }
+  .stat-value { color: var(--brand); }
+
+  .premium {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid var(--divider);
+    margin: 8px 12px 0;
+    padding: 12px 4px 8px;
+    font-size: 12px;
+    color: var(--text);
+    text-align: left;
+  }
+  .premium:hover { text-decoration: none; }
+  .premium:hover .premium-cta { text-decoration: underline; }
+  .premium-icon {
+    width: 16px; height: 16px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--premium); color: #fff; font-size: 10px;
+    border-radius: 2px;
+  }
+  .premium-line { display: block; }
+  .premium-cta { display: block; font-weight: 600; color: var(--text); }
+
+  .footer-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid var(--divider);
+    margin: 0 12px;
+    padding: 12px 4px 4px;
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 600;
+  }
+  .footer-link:hover { text-decoration: none; color: var(--brand); }
+  .bookmark { color: var(--text-2); font-size: 14px; }
+
+  .quick-card { margin-top: 8px; padding: 4px 0; }
+  .quick-card ul li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .quick-card ul li a:hover {
+    background: var(--surface-hover);
+    text-decoration: none;
+  }
+  .discover {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid var(--divider);
+    padding: 10px 16px;
+    color: var(--text-2);
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .discover:hover { background: var(--surface-hover); color: var(--text); text-decoration: none; }
+</style>

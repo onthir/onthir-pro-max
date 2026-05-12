@@ -1,0 +1,62 @@
+---
+import Icon from '../Icon.astro';
+import { content } from '../../lib/content.ts';
+const { profile } = content;
+---
+<section class="card analytics">
+  <header class="head">
+    <h2>Analytics</h2>
+    <span class="private tiny">
+      <Icon name="lock" size={12} /> Private to you
+    </span>
+  </header>
+  <ul class="rows">
+    <li>
+      <Icon name="about" size={20} />
+      <div>
+        <p class="big">{Math.round(profile.followers / 12)} profile views</p>
+        <p class="tiny">Discover who's viewed your profile.</p>
+      </div>
+    </li>
+    <li>
+      <Icon name="article" size={20} />
+      <div>
+        <p class="big">{profile.followers.toLocaleString()} post impressions</p>
+        <p class="tiny">Past 7 days.</p>
+      </div>
+    </li>
+    <li>
+      <Icon name="search" size={20} />
+      <div>
+        <p class="big">23 search appearances</p>
+        <p class="tiny">See how often you appear in search.</p>
+      </div>
+    </li>
+  </ul>
+  <a class="show-all" href="#">Show all analytics →</a>
+</section>
+
+<style>
+  .analytics { padding: 24px; margin-top: 8px; }
+  .head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+  .head h2 { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+  .private { display: inline-flex; align-items: center; gap: 4px; }
+  .rows { display: flex; flex-direction: column; gap: 16px; padding: 16px 0 8px; }
+  .rows li {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 12px;
+    align-items: start;
+    color: var(--text-2);
+  }
+  .big { margin: 0; font-size: 14px; font-weight: 600; color: var(--text); }
+  .show-all {
+    display: block;
+    border-top: 1px solid var(--divider);
+    padding-top: 12px;
+    margin-top: 4px;
+    color: var(--text-2);
+    font-weight: 600;
+  }
+  .show-all:hover { color: var(--brand); }
+</style>

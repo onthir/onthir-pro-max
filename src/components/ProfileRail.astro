@@ -1,0 +1,109 @@
+---
+import Icon from './Icon.astro';
+---
+<aside class="rail">
+  <section class="card promo">
+    <header class="promo-head">
+      <span class="promo-logo" aria-hidden="true"><Icon name="onthir" size={20} /></span>
+      <span class="tiny muted">Ad · ⋯</span>
+    </header>
+    <div class="promo-body">
+      <p class="promo-title">You might be interested in this</p>
+      <div class="promo-art" aria-hidden="true"></div>
+      <p class="promo-cta">A space for slow tools and considered things.</p>
+    </div>
+    <a href="#" class="btn btn-secondary promo-btn">Learn more</a>
+  </section>
+
+  <section class="card people">
+    <h3>People you may know</h3>
+    <p class="tiny muted">From your industry</p>
+    <ul class="people-list">
+      <li>
+        <span class="banner" aria-hidden="true"></span>
+        <span class="avi" aria-hidden="true">A</span>
+        <p class="pname">A. Maeve</p>
+        <p class="tiny">Filmmaker · Reykjavík</p>
+        <button class="btn btn-secondary small">+ Connect</button>
+      </li>
+      <li>
+        <span class="banner" aria-hidden="true"></span>
+        <span class="avi" aria-hidden="true">M</span>
+        <p class="pname">M. Reid</p>
+        <p class="tiny">Engineer · Lisbon</p>
+        <button class="btn btn-secondary small">+ Connect</button>
+      </li>
+    </ul>
+    <a class="show-all" href="#">Show all →</a>
+  </section>
+</aside>
+
+<style>
+  .rail { display: flex; flex-direction: column; gap: 8px; }
+
+  .promo { padding: 12px 16px 16px; text-align: center; }
+  .promo-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .promo-logo {
+    display: inline-flex;
+  }
+  .promo-title { margin: 0 0 8px; font-size: 14px; color: var(--text); }
+  .promo-art {
+    aspect-ratio: 1;
+    background:
+      radial-gradient(60% 60% at 30% 30%, #b08c54, transparent 70%),
+      radial-gradient(80% 80% at 80% 80%, #0a66c2, #09223b);
+    border-radius: 50%;
+    margin: 8px auto;
+    width: 80%;
+  }
+  .promo-cta { margin: 8px 0 12px; font-size: 14px; color: var(--text); font-weight: 600; }
+  .promo-btn { width: 100%; }
+
+  .people { padding: 12px 0 4px; }
+  .people h3 { margin: 0 16px; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
+  .people .tiny.muted { margin: 2px 16px 8px; }
+  .people-list { display: flex; flex-direction: column; }
+  .people-list li {
+    position: relative;
+    padding: 0 16px 16px;
+    border-bottom: 1px solid var(--divider);
+    margin-bottom: 8px;
+  }
+  .people-list li:last-child { border-bottom: none; margin-bottom: 0; }
+  .banner {
+    display: block;
+    height: 56px;
+    margin: 0 -16px 0;
+    background:
+      radial-gradient(60% 80% at 30% 30%, rgba(176,140,84,0.4), transparent 60%),
+      linear-gradient(135deg, #0a66c2, #09223b);
+  }
+  .avi {
+    display: inline-flex;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a1a1a, #3a3a3a);
+    color: #fff;
+    align-items: center; justify-content: center;
+    font-weight: 600;
+    border: 3px solid var(--surface);
+    margin-top: -28px;
+  }
+  .pname { margin: 8px 0 0; font-size: 14px; font-weight: 600; color: var(--text); }
+  .pname + .tiny { margin: 1px 0 8px; }
+  .btn.small { height: 28px; padding: 0 12px; font-size: 13px; width: 100%; }
+
+  .show-all {
+    display: block;
+    padding: 12px 16px;
+    color: var(--text-2);
+    font-weight: 600;
+    border-top: 1px solid var(--divider);
+  }
+  .show-all:hover { color: var(--brand); background: var(--surface-hover); text-decoration: none; }
+</style>

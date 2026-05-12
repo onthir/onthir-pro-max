@@ -1,0 +1,67 @@
+---
+import Section from './Section.astro';
+import { content } from '../../lib/content.ts';
+const { experience } = content;
+---
+<Section title="Experience" id="experience">
+  <ul class="exp-list">
+    {experience.map((e, i) => (
+      <li class={`exp ${i < experience.length - 1 ? 'has-divider' : ''}`}>
+        <span class="logo" aria-hidden="true">{e.logo}</span>
+        <div class="body">
+          <h3 class="role">{e.role}</h3>
+          <p class="company">{e.company} <span class="muted">· {e.type}</span></p>
+          <p class="dates tiny">{e.dates}</p>
+          <p class="loc tiny">{e.location}</p>
+          <p class="summary">{e.summary}</p>
+          {e.skills.length > 0 && (
+            <p class="skills">
+              <span class="skills-icon" aria-hidden="true">▦</span>
+              <strong>Skills:</strong> {e.skills.join(' · ')}
+            </p>
+          )}
+        </div>
+      </li>
+    ))}
+  </ul>
+</Section>
+
+<style>
+  .exp-list { display: flex; flex-direction: column; }
+  .exp {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 12px;
+    padding: 4px 0 16px;
+  }
+  .exp.has-divider { border-bottom: 1px solid var(--divider); margin-bottom: 12px; }
+  .logo {
+    width: 48px; height: 48px;
+    border-radius: 6px;
+    background: var(--surface-alt);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .role {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .company { margin: 2px 0 0; font-size: 14px; color: var(--text); }
+  .dates, .loc { margin: 1px 0 0; }
+  .summary {
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text);
+  }
+  .skills {
+    margin: 12px 0 0;
+    font-size: 14px;
+    color: var(--text);
+  }
+  .skills-icon { color: var(--text-2); margin-right: 4px; }
+</style>

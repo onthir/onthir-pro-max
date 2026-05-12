@@ -1,0 +1,199 @@
+---
+// Inline SVG icon set, sized via the `size` prop (defaults to 24).
+// Stroke-based outline icons matching LinkedIn's visual weight.
+type Props = {
+  name:
+    | 'home' | 'home-fill'
+    | 'projects' | 'projects-fill'
+    | 'writing' | 'writing-fill'
+    | 'video' | 'video-fill'
+    | 'about' | 'about-fill'
+    | 'search' | 'caret' | 'plus' | 'globe' | 'lock'
+    | 'photo' | 'video-post' | 'article' | 'event'
+    | 'like' | 'comment' | 'repost' | 'send'
+    | 'thumbs-filled' | 'celebrate' | 'support'
+    | 'pencil' | 'plus-thick' | 'arrow' | 'dot' | 'briefcase' | 'cap'
+    | 'onthir';
+  size?: number;
+  class?: string;
+};
+const { name, size = 24, class: cls = '' } = Astro.props;
+const s = size;
+---
+{name === 'onthir' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true">
+    <rect width="24" height="24" rx="4" fill="#0a66c2"/>
+    <text
+      x="12" y="17"
+      text-anchor="middle"
+      fill="#fff"
+      font-family="Source Sans 3, system-ui, sans-serif"
+      font-weight="700"
+      font-size="14"
+      letter-spacing="-0.02em"
+    >O</text>
+  </svg>
+)}
+{name === 'search' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="rgba(0,0,0,0.6)">
+    <path d="M11 4a7 7 0 1 0 4.39 12.46l3.58 3.58 1.42-1.42-3.58-3.58A7 7 0 0 0 11 4Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/>
+  </svg>
+)}
+{name === 'home' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M12 3 3 11h2v9h5v-6h4v6h5v-9h2L12 3Zm0 2.69 6 5.34V19h-2v-6H8v6H6v-7.97l6-5.34Z"/>
+  </svg>
+)}
+{name === 'home-fill' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M12 3 3 11h2v9h5v-6h4v6h5v-9h2L12 3Z"/>
+  </svg>
+)}
+{name === 'projects' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M9 4a2 2 0 0 0-2 2v1H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3V6a2 2 0 0 0-2-2H9Zm0 2h6v1H9V6ZM4 9h16v3H4V9Zm0 5h7v1h2v-1h7v4H4v-4Z"/>
+  </svg>
+)}
+{name === 'projects-fill' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M9 4a2 2 0 0 0-2 2v1H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3V6a2 2 0 0 0-2-2H9Zm0 2h6v1H9V6Z"/>
+  </svg>
+)}
+{name === 'writing' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11.59l4.7-4.7V5a2 2 0 0 0-2-2H5Zm0 2h14v9h-4v4H5V5Zm2 3v2h10V8H7Zm0 4v2h7v-2H7Z"/>
+  </svg>
+)}
+{name === 'writing-fill' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11.59l4.7-4.7V5a2 2 0 0 0-2-2H5Zm2 5h10v2H7V8Zm0 4h7v2H7v-2Z"/>
+  </svg>
+)}
+{name === 'video' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M3 6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3l4-2v10l-4-2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6Zm2 0v12h10V6H5Zm14 3.62-2 1v2.76l2 1V9.62Z"/>
+  </svg>
+)}
+{name === 'video-fill' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M3 6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3l4-2v10l-4-2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6Z"/>
+  </svg>
+)}
+{name === 'about' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-7 14c0-3.31 3.13-6 7-6s7 2.69 7 6v1H5v-1Zm2.05-1H17c-.5-1.7-2.6-3-5-3s-4.5 1.3-5 3h.05Z"/>
+  </svg>
+)}
+{name === 'about-fill' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 10c-3.87 0-7 2.69-7 6v1h14v-1c0-3.31-3.13-6-7-6Z"/>
+  </svg>
+)}
+{name === 'caret' && (
+  <svg width={s} height={s} viewBox="0 0 16 16" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M3 6l5 5 5-5H3Z"/>
+  </svg>
+)}
+{name === 'plus' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5Z"/>
+  </svg>
+)}
+{name === 'plus-thick' && (
+  <svg width={s} height={s} viewBox="0 0 16 16" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M7 2h2v5h5v2H9v5H7V9H2V7h5V2Z"/>
+  </svg>
+)}
+{name === 'globe' && (
+  <svg width={s} height={s} viewBox="0 0 16 16" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1Zm-.5 1.07v2.18H5.4A5.5 5.5 0 0 1 7.5 2.07Zm1 0a5.5 5.5 0 0 1 2.1 2.18H8.5V2.07ZM4.66 5.25H6.5v2H3.05a5.46 5.46 0 0 1 1.6-2Zm2.84 0h1V7.25h-1V5.25Zm2 0h1.84a5.46 5.46 0 0 1 1.6 2H9.5V5.25Zm-6.7 3h3.7v2H2.8a5.46 5.46 0 0 1 0-2Zm4.7 0h1V10.25h-1V8.25Zm2 0h3.7a5.46 5.46 0 0 1 0 2H9.5V8.25Zm-4.1 3H6.5v2.18a5.5 5.5 0 0 1-1.1-2.18Zm2.1 0h1V13.93H7.5V11.25Zm2 0h1.1a5.5 5.5 0 0 1-1.1 2.18V11.25Z"/>
+  </svg>
+)}
+{name === 'lock' && (
+  <svg width={s} height={s} viewBox="0 0 16 16" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M8 1a3 3 0 0 0-3 3v2H4v8h8V6h-1V4a3 3 0 0 0-3-3Zm0 1.5A1.5 1.5 0 0 1 9.5 4v2h-3V4A1.5 1.5 0 0 1 8 2.5Z"/>
+  </svg>
+)}
+{name === 'photo' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="#378fe9">
+    <path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2v8.5l3.5-3.5 4 4 3-3 3.5 3.5V7H5Zm10 1.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
+  </svg>
+)}
+{name === 'video-post' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="#5f9b41">
+    <path d="M3 6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3l4-2v10l-4-2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6Z"/>
+  </svg>
+)}
+{name === 'article' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="#e06847">
+    <path d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5Zm2 4h10v2H7V7Zm0 4h10v2H7v-2Zm0 4h7v2H7v-2Z"/>
+  </svg>
+)}
+{name === 'event' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="#c37d16">
+    <path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7Zm-2 6h14v12H5V8Z"/>
+  </svg>
+)}
+{name === 'like' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M19.46 11l-3.91-3.91a7 7 0 0 1-1.69-2.74L13.4 2.86a1.5 1.5 0 0 0-2.77.56v3.34c0 .47.04.94.13 1.4l.4 2.04H4a2 2 0 0 0-2 2v2c0 .26.05.51.14.75l2.32 6.18A2 2 0 0 0 6.32 22H17.5a2 2 0 0 0 2-1.55l1.65-7.43a2 2 0 0 0-1.69-2.02ZM6 12h2v8H6v-8Zm4 8 -1.43-3.81L8 14V12h4.16l-.66-3.34A6 6 0 0 1 11.5 7.32V4.78l.46 1.39a9 9 0 0 0 2.13 3.45L17.74 13H17l1.49 7H10Z"/>
+  </svg>
+)}
+{name === 'comment' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M7 4h10a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-3.5l-4 3v-3H7a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4Zm0 2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2.5v1.5L12.83 16H17a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H7Z"/>
+  </svg>
+)}
+{name === 'repost' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M17 5l-1.41 1.41L17.17 8H8a4 4 0 0 0-4 4v2h2v-2a2 2 0 0 1 2-2h9.17l-1.58 1.59L17 13l4-4-4-4ZM7 11l1.41 1.41L6.83 14H16a4 4 0 0 0 4-4v-2h-2v2a2 2 0 0 1-2 2H6.83l1.58-1.59L7 11l-4 4 4 4Z"/>
+  </svg>
+)}
+{name === 'send' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M3 3l18 9-18 9 4-9-4-9Zm2.92 2.84L8.5 11H14v2H8.5l-2.58 5.16L17.76 12 5.92 5.84Z"/>
+  </svg>
+)}
+{name === 'thumbs-filled' && (
+  <svg width={s} height={s} viewBox="0 0 16 16" class={cls} aria-hidden="true">
+    <circle cx="8" cy="8" r="8" fill="#0a66c2"/>
+    <path fill="#fff" d="M11.5 7.4 9.9 5.7a2.5 2.5 0 0 1-.6-1l-.2-.5a.5.5 0 0 0-.92.18v1.2c0 .17.02.33.05.5l.13.72H5.4a.7.7 0 0 0-.7.7v.7c0 .09.02.18.05.27l.83 2.21a.7.7 0 0 0 .65.45h4a.7.7 0 0 0 .69-.55l.59-2.66a.7.7 0 0 0-.6-.74H11.5Z"/>
+  </svg>
+)}
+{name === 'celebrate' && (
+  <svg width={s} height={s} viewBox="0 0 16 16" class={cls} aria-hidden="true">
+    <circle cx="8" cy="8" r="8" fill="#6dae4f"/>
+    <path fill="#fff" d="M11 5l-1 1 1 1 1-1-1-1Zm-7 6 4-4 2 2-4 4-2-2Zm6.5-3.5 1 1 1-1-1-1-1 1Z"/>
+  </svg>
+)}
+{name === 'support' && (
+  <svg width={s} height={s} viewBox="0 0 16 16" class={cls} aria-hidden="true">
+    <circle cx="8" cy="8" r="8" fill="#df704d"/>
+    <path fill="#fff" d="M8 4c-1.66 0-3 1.34-3 3 0 2.5 3 5 3 5s3-2.5 3-5c0-1.66-1.34-3-3-3Z"/>
+  </svg>
+)}
+{name === 'pencil' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25Zm17.71-10.21a1 1 0 0 0 0-1.42l-2.34-2.34a1 1 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82Z"/>
+  </svg>
+)}
+{name === 'arrow' && (
+  <svg width={s} height={s} viewBox="0 0 16 16" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M5 3l5 5-5 5V3Z"/>
+  </svg>
+)}
+{name === 'dot' && (
+  <svg width={s} height={s} viewBox="0 0 16 16" class={cls} aria-hidden="true" fill="currentColor">
+    <circle cx="8" cy="8" r="2"/>
+  </svg>
+)}
+{name === 'briefcase' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M9 4a2 2 0 0 0-2 2v1H3v13h18V7h-4V6a2 2 0 0 0-2-2H9Zm0 2h6v1H9V6Zm-4 3h14v3H5V9Zm0 5h14v4H5v-4Z"/>
+  </svg>
+)}
+{name === 'cap' && (
+  <svg width={s} height={s} viewBox="0 0 24 24" class={cls} aria-hidden="true" fill="currentColor">
+    <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3Zm0 2.31L17.84 9 12 12.69 6.16 9 12 5.31ZM5 13.18v3.27l7 3.5 7-3.5v-3.27l-7 3.82-7-3.82Z"/>
+  </svg>
+)}

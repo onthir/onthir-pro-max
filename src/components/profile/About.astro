@@ -1,0 +1,31 @@
+---
+import Section from './Section.astro';
+import { content } from '../../lib/content.ts';
+const { profile } = content;
+---
+<Section title="About" id="about">
+  <div class="about-body">
+    {profile.about.split('\n\n').map((p) => <p>{p}</p>)}
+  </div>
+  <button type="button" class="see-more">
+    …see more
+  </button>
+</Section>
+
+<style>
+  .about-body p {
+    margin: 0 0 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text);
+    white-space: pre-wrap;
+  }
+  .about-body p:last-child { margin-bottom: 0; }
+  .see-more {
+    display: block;
+    margin-top: 8px;
+    color: var(--text-2);
+    font-weight: 600;
+  }
+  .see-more:hover { color: var(--brand); text-decoration: underline; }
+</style>

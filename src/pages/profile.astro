@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProfileHero from '../components/profile/ProfileHero.astro';
+import About from '../components/profile/About.astro';
+import AnalyticsCard from '../components/profile/AnalyticsCard.astro';
+import Experience from '../components/profile/Experience.astro';
+import Projects from '../components/profile/Projects.astro';
+import Education from '../components/profile/Education.astro';
+import Skills from '../components/profile/Skills.astro';
+import ProfileRail from '../components/ProfileRail.astro';
+---
+<Layout title="Bibek Bhandari | Profile" active="about">
+  <div class="grid">
+    <div class="col-main">
+      <ProfileHero />
+      <AnalyticsCard />
+      <About />
+      <Experience />
+      <Projects />
+      <Education />
+      <Skills />
+    </div>
+    <div class="col-rail">
+      <ProfileRail />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr var(--col-right);
+    gap: var(--gap);
+    align-items: start;
+  }
+  .col-rail { position: sticky; top: calc(var(--nav-h) + 16px); }
+
+  @media (max-width: 1024px) {
+    .grid { grid-template-columns: 1fr; }
+    .col-rail { position: static; }
+  }
+</style>

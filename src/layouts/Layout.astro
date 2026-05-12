@@ -1,0 +1,47 @@
+---
+import '../styles/tokens.css';
+import TopNav from '../components/TopNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+type Props = {
+  title?: string;
+  description?: string;
+  active?: 'home' | 'projects' | 'writing' | 'video' | 'about';
+};
+
+const {
+  title = 'Bibek Bhandari',
+  description = 'Bibek Bhandari — Full-Stack Software Engineer based in Durham, NC. .NET Core, Angular, SQL Server, React, Python.',
+  active = 'home',
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <TopNav active={active} />
+    <main>
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>
+
+<style is:global>
+  main {
+    max-width: var(--container);
+    margin: 24px auto 24px;
+    padding: 0 24px;
+  }
+</style>

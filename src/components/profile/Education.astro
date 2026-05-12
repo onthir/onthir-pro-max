@@ -1,0 +1,48 @@
+---
+import Section from './Section.astro';
+import Icon from '../Icon.astro';
+import { content } from '../../lib/content.ts';
+const { education } = content;
+---
+<Section title="Education" id="education">
+  <ul class="edu-list">
+    {education.map((e, i) => (
+      <li class={`edu ${i < education.length - 1 ? 'has-divider' : ''}`}>
+        <span class="logo" aria-hidden="true"><Icon name="cap" size={28} /></span>
+        <div class="body">
+          <h3 class="school">{e.school}</h3>
+          <p class="degree">{e.degree}</p>
+          <p class="dates tiny">{e.dates}</p>
+          <p class="summary">{e.summary}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</Section>
+
+<style>
+  .edu-list { display: flex; flex-direction: column; }
+  .edu {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 12px;
+    padding: 4px 0 16px;
+  }
+  .edu.has-divider { border-bottom: 1px solid var(--divider); margin-bottom: 12px; }
+  .logo {
+    width: 48px; height: 48px;
+    border-radius: 6px;
+    background: var(--surface-alt);
+    display: inline-flex; align-items: center; justify-content: center;
+    color: var(--text);
+  }
+  .school { margin: 0; font-size: 16px; font-weight: 600; color: var(--text); }
+  .degree { margin: 2px 0 0; font-size: 14px; color: var(--text); }
+  .dates { margin: 1px 0 0; }
+  .summary {
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text);
+  }
+</style>

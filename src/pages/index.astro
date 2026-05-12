@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProfileSidebar from '../components/ProfileSidebar.astro';
+import Composer from '../components/Composer.astro';
+import FeedSort from '../components/FeedSort.astro';
+import PostCard from '../components/PostCard.astro';
+import NewsRail from '../components/NewsRail.astro';
+import { content } from '../lib/content.ts';
+---
+<Layout title="Bibek Bhandari | Feed" active="home">
+  <div class="grid">
+    <div class="col-left">
+      <ProfileSidebar />
+    </div>
+    <div class="col-mid">
+      <Composer />
+      <FeedSort />
+      {content.posts.map((post) => <PostCard post={post} />)}
+    </div>
+    <div class="col-right">
+      <NewsRail />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: var(--col-left) var(--col-mid) var(--col-right);
+    gap: var(--gap);
+    align-items: start;
+  }
+  .col-left, .col-right { position: sticky; top: calc(var(--nav-h) + 16px); }
+  .col-left { align-self: start; }
+  .col-right { align-self: start; }
+
+  @media (max-width: 1128px) {
+    .grid {
+      grid-template-columns: var(--col-left) 1fr var(--col-right);
+    }
+  }
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: var(--col-left) 1fr;
+    }
+    .col-right { display: none; }
+    .col-left { position: static; }
+  }
+  @media (max-width: 720px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .col-left { display: none; }
+  }
+</style>

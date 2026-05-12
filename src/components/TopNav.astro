@@ -1,0 +1,167 @@
+---
+import Icon from './Icon.astro';
+import { content } from '../lib/content.ts';
+
+type Props = { active?: 'home' | 'projects' | 'writing' | 'video' | 'about' };
+const { active = 'home' } = Astro.props;
+const { profile } = content;
+
+const items = [
+  { id: 'home',     label: 'Home',     href: '/',         icon: 'home',     fill: 'home-fill' },
+  { id: 'projects', label: 'Projects', href: '/projects', icon: 'projects', fill: 'projects-fill' },
+  { id: 'writing',  label: 'Writing',  href: '/writing',  icon: 'writing',  fill: 'writing-fill' },
+  { id: 'video',    label: 'Video',    href: '/video',    icon: 'video',    fill: 'video-fill' },
+  { id: 'about',    label: 'About',    href: '/profile',  icon: 'about',    fill: 'about-fill' },
+] as const;
+---
+<header class="topnav">
+  <div class="topnav-inner">
+    <a class="brand" href="/" aria-label="Onthir — Home">
+      <Icon name="onthir" size={34} />
+    </a>
+
+    <label class="search">
+      <Icon name="search" size={16} />
+      <input type="text" placeholder="Search" />
+    </label>
+
+    <nav class="nav" aria-label="Primary">
+      {items.map((item) => {
+        const isActive = active === item.id;
+        return (
+          <a class={`nav-item ${isActive ? 'is-active' : ''}`} href={item.href}>
+            <Icon name={isActive ? item.fill : item.icon} size={24} />
+            <span>{item.label}</span>
+          </a>
+        );
+      })}
+      <div class="nav-divider" aria-hidden="true"></div>
+      <a class="nav-item nav-me" href="/profile" aria-haspopup="true">
+        <span class="me-avatar" aria-hidden="true">
+          {profile.avatar
+            ? <img src={profile.avatar} alt="" />
+            : <span>{profile.name[0]}</span>}
+        </span>
+        <span class="me-label">Me <Icon name="caret" size={12} /></span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: var(--nav-h);
+    background: var(--surface);
+    border-bottom: 1px solid var(--divider);
+  }
+  .topnav-inner {
+    max-width: var(--container);
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .brand { display: inline-flex; padding: 4px; border-radius: 4px; }
+  .brand:hover { background: var(--surface-hover); text-decoration: none; }
+
+  .search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface-alt);
+    height: 34px;
+    padding: 0 8px;
+    border-radius: 4px;
+    width: 280px;
+    margin-left: 4px;
+  }
+  .search input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    width: 100%;
+    font: inherit;
+    color: var(--text);
+  }
+  .search input::placeholder { color: var(--text-2); }
+
+  .nav {
+    margin-left: auto;
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    gap: 0;
+  }
+  .nav-item {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-2);
+    font-size: 12px;
+    font-weight: 400;
+    min-width: 80px;
+    padding: 0 8px;
+    height: 100%;
+    border-bottom: 2px solid transparent;
+    margin-top: 2px;
+    text-decoration: none;
+  }
+  .nav-item:hover { color: var(--text); text-decoration: none; }
+  .nav-item.is-active {
+    color: var(--text);
+    border-bottom-color: var(--text);
+    font-weight: 600;
+  }
+  .nav-item span { margin-top: 1px; }
+
+  .nav-divider {
+    width: 1px;
+    background: var(--divider);
+    margin: 12px 4px;
+  }
+
+  .nav-me {
+    cursor: pointer;
+  }
+  .me-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a1a1a, #383838);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    overflow: hidden;
+  }
+  .me-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .me-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    margin-top: 1px;
+  }
+
+  @media (max-width: 900px) {
+    .nav-item span { display: none; }
+    .nav-item { min-width: 56px; }
+    .search { width: 200px; }
+  }
+  @media (max-width: 640px) {
+    .search { width: 40px; }
+    .search input { display: none; }
+  }
+</style>

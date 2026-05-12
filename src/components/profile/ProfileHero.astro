@@ -1,0 +1,235 @@
+---
+import Avatar from '../Avatar.astro';
+import Icon from '../Icon.astro';
+import { content } from '../../lib/content.ts';
+const { profile } = content;
+---
+<section class="hero card">
+  <div class="banner" aria-hidden="true">
+    <span class="banner-art"></span>
+    <button type="button" class="edit-banner" aria-label="Edit banner">
+      <Icon name="pencil" size={16} />
+    </button>
+  </div>
+
+  <div class="hero-body">
+    <div class="avatar-wrap">
+      <Avatar initial={profile.name[0]} src={profile.avatar} alt={profile.name} size={152} ring />
+    </div>
+
+    <div class="identity">
+      <div class="name-row">
+        <h1 class="name">{profile.name}</h1>
+        <span class="verified" aria-label="Verified">✓</span>
+      </div>
+      <p class="headline">{profile.headline}</p>
+      <p class="meta tiny">
+        {profile.location} · <a href="#contact">Contact info</a>
+      </p>
+      <p class="meta connections">
+        <a href="#"><strong>{profile.connections.toLocaleString()} connections</strong></a>
+        <span class="dot">·</span>
+        <a href="#"><strong>{profile.followers.toLocaleString()} followers</strong></a>
+      </p>
+
+      <div class="who-row" aria-label="Mutual connections">
+        <span class="stack" aria-hidden="true">
+          <span class="mini">A</span>
+          <span class="mini">M</span>
+          <span class="mini">K</span>
+        </span>
+        <span class="who-text muted">A. Maeve, M. Reid, and 11 others you may know</span>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="#">Open to</a>
+        <a class="btn btn-secondary" href="#contact">Contact</a>
+        <a class="btn btn-ghost" href="#">Resources <Icon name="caret" size={12} /></a>
+        <a class="btn btn-ghost" href="#">More</a>
+      </div>
+    </div>
+
+    <aside class="affiliations">
+      <a class="aff" href="#experience">
+        <span class="aff-logo" aria-hidden="true">{profile.currentRole[0]}</span>
+        <span class="aff-text">{profile.currentRole}</span>
+      </a>
+      <a class="aff" href="#education">
+        <span class="aff-logo edu" aria-hidden="true"><Icon name="cap" size={18} /></span>
+        <span class="aff-text">{profile.education}</span>
+      </a>
+    </aside>
+  </div>
+
+  <footer class="open-to">
+    <div class="open-card">
+      <h3>Open to work</h3>
+      <p class="tiny">{profile.openTo.join(', ')} roles</p>
+      <p><a href="#">Show details</a></p>
+    </div>
+    <div class="open-card">
+      <h3>Providing services</h3>
+      <p class="tiny">Writing, Video, Software</p>
+      <p><a href="#">Show details</a></p>
+    </div>
+  </footer>
+</section>
+
+<style>
+  .hero { padding: 0; }
+
+  .banner {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  .banner-art {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(60% 80% at 20% 30%, rgba(176,140,84,0.65), transparent 70%),
+      radial-gradient(70% 80% at 80% 70%, rgba(10,102,194,0.7), transparent 65%),
+      linear-gradient(180deg, #0d1b2a, #0a0f15);
+  }
+  .edit-banner {
+    position: absolute; right: 16px; top: 16px;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    color: var(--brand);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .edit-banner:hover { background: #fff; }
+
+  .hero-body {
+    position: relative;
+    padding: 0 24px 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: start;
+  }
+  .avatar-wrap {
+    position: absolute;
+    top: -76px;
+    left: 24px;
+  }
+  .identity {
+    grid-column: 1;
+    margin-top: 88px;
+  }
+
+  .name-row { display: flex; align-items: center; gap: 8px; }
+  .name {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .verified {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: #fff;
+    font-size: 11px;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+
+  .headline {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .meta {
+    margin: 4px 0 0;
+    font-size: 14px;
+  }
+  .meta a { color: var(--text-2); font-weight: 400; }
+  .meta a:hover { color: var(--brand); }
+  .meta.connections a { color: var(--brand); font-weight: 600; }
+  .dot { color: var(--text-3); padding: 0 4px; }
+
+  .who-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .stack { display: inline-flex; }
+  .mini {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2a2a2a, #4a4a4a);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--surface);
+    margin-left: -6px;
+  }
+  .mini:first-child { margin-left: 0; }
+  .who-text { font-size: 14px; }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .affiliations {
+    grid-column: 2;
+    margin-top: 88px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 220px;
+    text-align: right;
+  }
+  .aff {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 6px;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    align-self: flex-end;
+  }
+  .aff:hover { background: var(--surface-hover); text-decoration: none; }
+  .aff-logo {
+    width: 24px; height: 24px;
+    background: var(--surface-alt);
+    border-radius: 4px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+    color: var(--text);
+  }
+  .aff-logo.edu { color: var(--text-2); }
+
+  .open-to {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 24px 24px;
+  }
+  .open-card {
+    border: 1px solid var(--divider);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .open-card h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+  .open-card p { margin: 4px 0 0; font-size: 14px; color: var(--text-2); }
+  .open-card p a { font-weight: 600; }
+
+  @media (max-width: 720px) {
+    .hero-body { grid-template-columns: 1fr; }
+    .affiliations { grid-column: 1; margin-top: 0; text-align: left; }
+    .aff { align-self: flex-start; }
+    .open-to { grid-template-columns: 1fr; }
+  }
+</style>
