@@ -14,7 +14,8 @@
       "Bash(curl -s http://localhost:4321/)",
       "Bash(curl -s http://localhost:4321/video)",
       "Bash(python -c \"import sys,re; s=sys.stdin.read\\(\\); m=re.search\\(r'<p class=\\\\\"lead\\\\\"[^>]*>\\(.*?\\)</p>', s, re.DOTALL\\); print\\(repr\\(m.group\\(1\\)\\) if m else 'no match'\\)\")",
-      "Bash(curl -s http://localhost:4321/profile)"
+      "Bash(curl -s http://localhost:4321/profile)",
+      "Bash(npx astro *)"
     ]
   }
 }

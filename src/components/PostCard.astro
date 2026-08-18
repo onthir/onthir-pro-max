@@ -2,6 +2,7 @@
 import Avatar from './Avatar.astro';
 import Icon from './Icon.astro';
 import { content, type Post } from '../lib/content.ts';
+import { isExternal } from '../lib/url.ts';
 
 type Props = { post: Post };
 const { post } = Astro.props;
@@ -46,12 +47,17 @@ const { profile } = content;
     </div>
   )}
   {post.media && post.media.kind === 'article' && (
-    <a href="#" class="post-article">
+    <a
+      href={post.media.url ?? '#'}
+      class="post-article"
+      target={isExternal(post.media.url) ? '_blank' : undefined}
+      rel={isExternal(post.media.url) ? 'noopener noreferrer' : undefined}
+    >
       <div class="art-thumb" aria-hidden="true"></div>
       <div class="art-body">
         <p class="art-title">{post.media.title}</p>
         <p class="art-sub tiny">{post.media.subtitle}</p>
-        <p class="art-domain tiny">{post.media.domain} · 4 min read</p>
+        <p class="art-domain tiny">{post.media.domain}{post.media.meta ? ` · ${post.media.meta}` : ''}</p>
       </div>
     </a>
   )}

@@ -19,6 +19,23 @@
   },
   "posts": [
     {
+      "id": "post-6",
+      "timeAgo": "1h",
+      "visibility": "Public",
+      "body": "Shipped WhatList — one list for movies and TV.\n\nTrack films and series side by side in dedicated sections: build your watchlist, mark what you've watched, and never lose track of what's next.\n\nRate it, review it, remember it. Any title gets 0.5 to 5 stars plus your own written take, so your taste is recorded in your own words instead of a forgotten mental note.\n\nCurate lists worth sharing — ranked custom lists like \"Top 10 for a road trip\" or \"Best of 2026\", built straight from any movie or show page.\n\nFollow the people whose taste you trust. One-way follows mean no awkward friend requests: follow anyone, see their reviews in your home feed, and get a notification when someone follows you.\n\nAnd a public profile that looks like your taste — poster-forward and dark-mode at /u/yourname, with Watched, Watchlist, Reviews, and Lists tabs, backed by TMDB's full catalogue and per-user privacy on every record.\n\nTry it below.",
+      "media": {
+        "kind": "article",
+        "title": "WhatList — track what you watch, rate it, share it",
+        "domain": "whatlist.vercel.app",
+        "subtitle": "Movies and TV in one place: watchlists, 0.5–5 star reviews, ranked lists, and the people whose taste you trust.",
+        "url": "https://whatlist.vercel.app",
+        "meta": "Live"
+      },
+      "likes": 96,
+      "comments": 14,
+      "reposts": 7
+    },
+    {
       "id": "post-5",
       "timeAgo": "2h",
       "visibility": "Public",
@@ -63,7 +80,7 @@
       "timeAgo": "1w",
       "visibility": "Public",
       "body": "One of the most underrated things you can do as an engineer is document the systems no one else wants to touch.\n\nDuring an org restructuring at BCBS I spent a few weeks reverse-engineering and writing up three enterprise portals — Member, Broker, Provider — across frontend, backend, databases, deployments, logging, and external integrations. Nobody asked. It made onboarding faster, debugging cheaper, and ownership clearer for the whole team.\n\nWriting it up here.",
-      "media": { "kind": "article", "title": "Why I document systems no one asked me to", "domain": "onthir.com", "subtitle": "Notes from reverse-engineering three enterprise portals during an org restructuring." },
+      "media": { "kind": "article", "title": "Why I document systems no one asked me to", "domain": "onthir.com", "subtitle": "Notes from reverse-engineering three enterprise portals during an org restructuring.", "meta": "4 min read" },
       "likes": 234,
       "comments": 41,
       "reposts": 19
@@ -157,6 +174,13 @@
     }
   ],
   "projects": [
+    {
+      "name": "WhatList — Movie & TV Tracker",
+      "dates": "Aug 2026 — Present · whatlist.vercel.app",
+      "summary": "One list for movies and TV. Track films and series side by side in dedicated sections — build your watchlist, mark what you've watched, and never lose track of what's next.\n\nRate it, review it, remember it. Give any title 0.5 to 5 stars and add your own written take, so your taste is recorded in your own words instead of a forgotten mental note.\n\nCurate lists worth sharing. Build ranked custom lists — \"Top 10 for a road trip,\" \"Best of 2026\" — and add titles to them straight from any movie or show page.\n\nFollow the people whose taste you trust. One-way follows mean no awkward friend requests: follow anyone, see their reviews in your home feed, and get a notification when someone follows you.\n\nA public profile that looks like your taste. A poster-forward, dark-mode profile at /u/yourname with Watched, Watchlist, Reviews, and Lists tabs — backed by TMDB's full catalogue and per-user privacy on every record.",
+      "link": "https://whatlist.vercel.app",
+      "skills": ["TMDB API", "Watchlists & ratings", "Social follows & feed", "Ranked custom lists", "Dark-mode UI", "Vercel"]
+    },
     {
       "name": "CodeRaid — Alumni Management Platform",
       "dates": "Best Capstone Award · University of Louisiana Monroe",

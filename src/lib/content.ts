@@ -27,7 +27,7 @@ export type Post = {
   media:
     | null
     | { kind: 'image'; ratio: string; label: string }
-    | { kind: 'article'; title: string; domain: string; subtitle: string }
+    | { kind: 'article'; title: string; domain: string; subtitle: string; url?: string; meta?: string }
     | { kind: 'video'; provider: 'youtube'; id: string; title: string };
   likes: number;
   comments: number;
